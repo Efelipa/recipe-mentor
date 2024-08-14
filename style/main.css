@@ -95,7 +95,9 @@ p {
     flex-direction: column;
     gap: 30px;
 }
-
+.basic-info {
+    gap: 10px
+}
 .info {
     padding: 20px;
 }
