@@ -80,6 +80,7 @@ p {
 #recipe {
     width: 100%;
     background: var(--white);
+    transition: .6s ease;
 }
 
 .recipe-image {
