@@ -7,10 +7,12 @@
     font-family: 'Outfit';
     src: url(/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
 }
+
 :root {
     /* Layout */
     --mobile-screen: 375px;
     --desktop-screen: 1440px;
+    
     /* Colors */
     --white: hsl(0, 0%, 100%);
     --stone-100: hsl(30, 54%, 90%);
@@ -20,9 +22,9 @@
     --brown-800: hsl(14, 45%, 36%);
     --rose-800: hsl(332, 51%, 32%);
     --rose-50: hsl(330, 100%, 98%);
+    
     /* Typography */
     --body-size: 16px;
-    /* Fonts */
     --font-young: 'Young Serif';
     --weight-young: 400;
     --font-outfit: 'Outfit';
@@ -33,23 +35,185 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     min-height: 100vh;
     background: var(--stone-100);
-    font-family: 'Outfit';
-    ul, ol {
-        list-style-position: inside;
-    }
+    font-family: var(--font-outfit);
+    font-size: var(--body-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+h2 {
+    color: var(--brown-800);
+    font-family: var(--font-young);
+    font-weight: var(--weight-young);
+}
+
+ul, ol {
+    color: var(--stone-600);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+hr {
+    color: var(--stone-150);
+    height: .5px;
+}
+
+p {
+    font-weight: var(--weight-young);
+}
+
+/* Utils */
+.bold {
+    font-weight: bold;
+}
+
+/* Main */
 #recipe {
     width: 100%;
     background: var(--white);
 }
+
 .recipe-image {
     width: 100%;
     object-fit: cover;
     height: auto;
 }
+
+/* Info */
+.info, .basic-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .info {
     padding: 20px;
+}
+
+.basic-info .title {
+    font-family: var(--font-young);
+    font-weight: 500;
+}
+
+.basic-info p {
+    color: var(--stone-600);
+    font-weight: 400;
+}
+
+/* Preparation */
+.card-preparation {
+    background: var(--rose-50);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-preparation__title {
+    color: var(--rose-800);
+}
+
+.card-preparation__time {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+/* Ingredients */
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Instructions */
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.instructions li::marker {
+    color: var(--rose-800);
+    font-weight: 600;
+}
+
+/* Nutrition */
+.nutrition {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.nutrition table {
+    border-collapse: collapse;
+    border-spacing: 0px 20px;
+}
+
+.nutrition tr {
+    border-bottom: 1px solid var(--stone-600);
+    text-align: center;
+    color: var(--stone-600);
+}
+
+.nutrition td {
+    padding: 10px;
+    border: 0px;
+}
+
+.nutrition td:nth-child(2n) {
+    color: var(--rose-800);
+}
+
+/* Footer */
+.attribution {
+    background: var(--rose-800);
+    color: var(--white);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--stone-100);
+}
+
+/* Media Queries */
+@media screen and (min-width: 660px) {
+    #recipe {
+        width: 600px;
+        padding: 25px;
+        margin: 30px 0;
+        border-radius: .5em;
+    }
+
+    .recipe-image {
+        border-radius: .5em;
+    }
+
+    .attribution {
+        width: 100%;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .nutrition tr {
+        text-align: left;
+    }
 }
